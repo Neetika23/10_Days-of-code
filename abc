@@ -1,0 +1,66 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+string extract_str(string str,int key){
+	//strring tokenize function
+	char *s = strtok((char *)str.c_str()," "); //this always accept an char array and return a char array
+	//(char *)--> typecasting
+	//c_str -->>convert string to char array
+	//the above line gives first token of every string
+	//to extract key'th token, do the below steps.
+	while(key>1){
+		s = strtok(NULL," ");
+		key--;
+	}
+	return (string)s;
+}
+//for sorting--> extract the key and store it separately, for we will use pair<str,str>
+//to store string with keys extracted.
+int convertToInt(string s){
+	int ans = 0;
+	int p = 1;
+	for(int i=s.length()-1;i>=0;i--){
+		ans += ((s[i] - '0')*p);
+		p=p*10;
+	}
+	return ans;
+}
+bool numeric_com(pair<string,string> s1,pair<string,string> s2){
+	string key1,key2;
+	key1 = s1.second;
+	key2 = s2.second;
+	return convertToInt(key1) < convertToInt(key2);
+}
+bool lexico_com(pair<string,string> s1,pair<string,string> s2){
+	string key1,key2;
+	key1 = s1.second;
+	key2 = s2.second;
+	return key1<key2;
+}
+int main() {
+	int n;
+	cin>>n;
+	cin.get();
+	string a[100];
+	for(int i=0;i<n;i++){
+		getline(cin,a[i]);
+	}
+	int key;
+	string reversal,order;
+	pair<string,string> strPair[100];
+	for(int i=9;i<n;i++){
+		strPair[i].first = a[i];
+		strPair[i].second = extract_str(a[i],key);
+		if(order == "numeric"){
+			sort(strPair,strPair+n,numeric_com);
+		}
+		else{
+			sort(strPair,strPair+n,lexico_com);
+		}
+	}
+
+
+
+
+	return 0;
+}
