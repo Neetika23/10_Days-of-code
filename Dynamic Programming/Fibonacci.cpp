@@ -1,7 +1,9 @@
+/*There are five approaches: 1. Recursion  2.Top Bottom  3. Bottom Up  4.Bottom up with space optimization  
+5.Matrix Exponentiation (Reduce Time complexity to O(logn) */
 #include<iostream>
 using namespace std;
 
-/*Bottom Up Approach*/
+/*Bottom Up Approach (Space Complexity = O(n) and Time Complexity = O(n))*/
 int fib_bottomup(int n){
 	int dp[100]={0};
 	dp[1] = 1;
@@ -11,7 +13,7 @@ int fib_bottomup(int n){
 	return dp[n];
 }
 
-/*Top Bottom Approach*/
+/*Top Bottom Approach (Space Complexity = O(n) and Time Complexity = O(n))) */
 int fib(int n, int dp[]){
   if(n==0 || n==1){
     return n;
@@ -23,7 +25,7 @@ int fib(int n, int dp[]){
   return ans = dp[n];
   }
   
-  /*Bottom Up with space optimization*/
+  /*Bottom Up with space optimization (Space Complexity = O(1) and Time Complexity = O(n)) */
   int fib(int n){
     if(n==0 || n==1){
       return n;
