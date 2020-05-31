@@ -1,5 +1,5 @@
 /*There are five approaches: 1. Recursion  2.Top Bottom  3. Bottom Up  4.Bottom up with space optimization  
-5.Matrix Exponentiation (Reduce Time complexity to O(logn) */
+5.Matrix Exponentiation (Reduce Space complexity to O(logn) */
 #include<iostream>
 using namespace std;
 
