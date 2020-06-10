@@ -15,7 +15,7 @@ int main(){
     w(t){
         int n;
         cin>>n;
-        mk(arr,n,int);
+        mk(arr,n+1,int);
         
         for(int i=1;i<=n;i++){
             cin>>arr[i];
