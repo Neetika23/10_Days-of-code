@@ -1,3 +1,6 @@
+//Space -> O(n)
+//Time -> O(n)   
+
 #include <iostream>
 #include<vector>
 #define inf 1e9
