@@ -1,0 +1,30 @@
+//Without follow up part
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+       //Preprocessing step of creating a suffix array
+        int n = nums.size(),prod_so_far=1;
+        vector<int> suffix(n,1); //create a vector suffix with size n and all initialise to 1.
+        vector<int> out(n,1);
+        
+        suffix[n-1] = nums[n-1]; //last ele of suffix is last ele of nums array
+        
+        //suffix[i] = prod of ele from nums[i] to nums[n] (i is included)
+        for(int i = n-2 ; i >= 0 ; i--){
+            suffix[i] = suffix[i+1] * nums[i];
+        }
+        
+        //Part 2 calc prod_so_far i.e 0 to n-1 product
+        for(int i=0;i<n-1;i++){
+            out[i] = prod_so_far * suffix[i+1];
+            
+            prod_so_far = prod_so_far * nums[i];
+            
+        }
+        out[n-1]= prod_so_far;
+        return out;
+    }
+};
+
+//with follow up part (without extra space)
+//replace suffix vector with output vector
