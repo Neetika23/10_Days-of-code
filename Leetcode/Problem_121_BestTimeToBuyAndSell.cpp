@@ -1,4 +1,5 @@
 // Brute Force
+// O(n^2) time complexity
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
