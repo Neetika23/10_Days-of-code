@@ -22,6 +22,7 @@ public:
 };
 
 //Optimization
+// O(n) time complexity
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
