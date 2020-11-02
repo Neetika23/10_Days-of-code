@@ -11,7 +11,7 @@ public:
         
         //suffix[i] = prod of ele from nums[i] to nums[n] (i is included)
         for(int i = n-2 ; i >= 0 ; i--){
-            suffix[i] = suffix[i+1] * nums[i];
+            suffix[i] = suffix[i+1] * nums[i];  //product of elements after i, including i.
         }
         
         //Part 2 calc prod_so_far i.e 0 to n-1 product
