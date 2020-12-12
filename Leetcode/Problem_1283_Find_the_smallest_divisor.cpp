@@ -1,9 +1,10 @@
+//Complexity: O(nlogw)  w is max element of array
 class Solution {
 public:
     int getSum(vector<int> &nums, int divisor){
         int tot = 0, i, n = nums.size();
         for(int i=0;i<n;i++){
-            tot = tot+ceil((float)nums[i]/divisor);
+            tot = tot+ceil((float)nums[i]/divisor);  //float is used so that we get the correct ceil.
         }
         return tot;
     }
